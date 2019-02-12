@@ -1,6 +1,7 @@
 const {
   json
 } = require('micro')
+const micro = require('micro')
 
 const checkValues = (...values) =>
   values.every((value) => values[0] === value)
@@ -52,16 +53,20 @@ const format = (board) =>
   board.split(' ') :
   board.flat()
 
-module.exports = async (req, res) => {
+const server = micro(async (req, res) => {
   const {
     input
   } = await json(req)
-
+  
   console.log(input)
   const formatted = format(input)
   console.log(formatted)
-
+  
   return {
     won: hasWon(formatted)
   }
-}
+})
+
+const PORT = process.env.PORT || 3000
+
+server.listen(PORT)
