@@ -4,7 +4,7 @@
   "description": "Tic Tac Toe Api",
   "main": "index.js",
   "scripts": {
-    "start": "micro",
+    "start": "node ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git push heroku master"
   },
