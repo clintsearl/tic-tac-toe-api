@@ -4,16 +4,18 @@ const {
 const micro = require('micro')
 
 const PORT = process.env.PORT || 3000
-
+let values = "[[0, 0, 0], [0, 0, 0], [0, 0, 0]]"
 const checkForNullValues = (...values) =>
   values.some(value => value !== null)
 
 const checkValues = (...values) =>
   values.every((value) => values[0] === value) &&
   checkForNullValues(values)
+//changed to >= 5 
+
 
 const isValid = board =>
-  board.length > 5 &&
+  board.length >= 5 &&
   board.length <= 9
 
 const checkRows = board =>

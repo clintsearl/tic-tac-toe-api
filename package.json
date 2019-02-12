@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/TylerGarlick/tic-tac-toe-api#readme",
   "dependencies": {
-    "micro": "^9.3.3"
+    "micro": "^9.3.3",
+    "node": "^11.9.0"
   }
 }
